@@ -14,7 +14,7 @@ import java.util.List;
 
 public class UsuarioDAO {
 
-    //Metodo para registrar un nuevo usuario
+    //metodo para registrar un nuevo usuario
     public void registrarUsuario(Usuario usuario) {
         String sql = "INSERT INTO usuarios (username, password, id_rol, nombre_completo, email, estado) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -36,7 +36,7 @@ public class UsuarioDAO {
         }
     }
 
-    // Metodo para iniciar sesion
+    // metodo para iniciar sesion
     public Usuario iniciarSesion(String username, String password) {
         Usuario usuario = null;
         String sql = "SELECT u.*, r.nombre as rol_nombre, r.descripcion as rol_descripcion FROM usuarios u "
@@ -99,7 +99,7 @@ public class UsuarioDAO {
     }
 
 
-    // Metodo para restablecer la contraseña de un usuario
+    // metodo para restablecer la contraseña de un usuario
     public void restablecerContrasena(String username, String nuevaContrasena) {
         String sql = "UPDATE usuarios SET password = ? WHERE username = ?";
 

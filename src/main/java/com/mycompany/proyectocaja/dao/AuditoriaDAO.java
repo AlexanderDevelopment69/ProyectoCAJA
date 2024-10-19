@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class AuditoriaDAO {
-    // Metodo para registrar la auditoría
+    // metodo para registrar la auditoría
     public void registrarAuditoria(int idUsuario, String accion) {
         String sql = "INSERT INTO auditoria (id_usuario, accion) VALUES (?, ?)";
 

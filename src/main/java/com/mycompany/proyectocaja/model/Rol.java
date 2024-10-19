@@ -3,13 +3,11 @@ package com.mycompany.proyectocaja.model;
 public class Rol {
 
     private int id;
-    private String nombre; // Nombre del rol (cajero, administrador, contador)
-    private String descripcion; // Descripción del rol
+    private String nombre; //(cajero, administrador, contador)
+    private String descripcion;
 
-    // Constructor vacío
     public Rol() {}
 
-    // Constructor completo
     public Rol(int id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
@@ -46,7 +44,7 @@ public class Rol {
         this.descripcion = descripcion;
     }
 
-    // Método para mostrar una descripción del rol
+
     @Override
     public String toString() {
         return "Rol{" +

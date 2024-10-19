@@ -53,7 +53,7 @@ public class AsignarCajaServlet extends HttpServlet {
 
         caja.setCajeroId(usuario.getId());
         caja.setEstado("ocupada");
-        cajaDAO.actualizarCaja(caja);
+        cajaDAO.asignarCajero(caja);
 
 //        request.setAttribute("mensajeExito", "Caja asignada exitosamente al cajero.");
         request.getSession().setAttribute("mensajeExito", "Caja asignada exitosamente al cajero..");

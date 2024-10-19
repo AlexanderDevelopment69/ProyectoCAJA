@@ -7,17 +7,15 @@ public class Caja {
 
     private int id;
     private String identificador;
-    private String estado; // 'disponible' o 'ocupada'
+    private String estado; // 'disponible' o 'aperturada' o 'ocupada'
     private BigDecimal saldoInicial;
     private BigDecimal saldoFinal;
     private Timestamp fechaApertura;
     private Timestamp fechaCierre;
-    private int cajeroId; // Nuevo atributo para relacionar con el usuario
+    private int cajeroId;  //relaciona con el usuario
 
-    // Constructor vacío
     public Caja() {}
 
-    // Constructor completo
     public Caja(int id, String identificador, String estado, BigDecimal saldoInicial,
                 BigDecimal saldoFinal, Timestamp fechaApertura, Timestamp fechaCierre, int cajeroId) {
         this.id = id;
@@ -27,7 +25,7 @@ public class Caja {
         this.saldoFinal = saldoFinal;
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
-        this.cajeroId = cajeroId; // Inicializar el nuevo atributo
+        this.cajeroId = cajeroId;
     }
 
     // Getters y Setters
@@ -95,7 +93,6 @@ public class Caja {
         this.cajeroId = cajeroId; // Setter para el nuevo atributo
     }
 
-    // Método para mostrar una descripción de la caja
     @Override
     public String toString() {
         return "Caja{" +

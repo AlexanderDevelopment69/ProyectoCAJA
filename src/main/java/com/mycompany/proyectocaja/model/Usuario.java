@@ -5,20 +5,18 @@ public class Usuario {
     private int id;
     private String username;
     private String password;
-    private Rol rol; // Asociación con la clase Rol
+    private Rol rol;
     private String nombreCompleto;
     private String email;
-    private boolean estado; // Para indicar si el usuario está activo o no
+    private boolean estado;
 
-    // Constructor vacío
     public Usuario() {}
 
-    // Constructor completo
     public Usuario(int id, String username, String password, Rol rol, String nombreCompleto, String email, boolean estado) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.rol = rol; // Se relaciona el rol con la clase Rol
+        this.rol = rol;
         this.nombreCompleto = nombreCompleto;
         this.email = email;
         this.estado = estado;
@@ -81,7 +79,6 @@ public class Usuario {
         this.estado = estado;
     }
 
-    // Método para mostrar una descripción del usuario
     @Override
     public String toString() {
         return "Usuario{" +

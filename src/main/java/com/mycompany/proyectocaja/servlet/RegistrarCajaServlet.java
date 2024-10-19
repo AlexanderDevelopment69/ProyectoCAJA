@@ -51,7 +51,7 @@ public class RegistrarCajaServlet extends HttpServlet {
 
         // registra la nueva caja en la base de datos
         cajaDAO.registrarCaja(nuevaCaja);
-
+        request.getSession().setAttribute("mensajeExito", "Caja registrada exitosamente.");
         // redirige a la lista de cajas
         response.sendRedirect("registrarCaja");
     }

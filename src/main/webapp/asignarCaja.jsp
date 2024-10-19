@@ -57,7 +57,7 @@
         </c:if>
 
 
-        <h3>Cajas Disponibles</h3>
+        <h4>Cajas Aperturadas</h4>
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -81,7 +81,7 @@
                     <td>${caja.fechaApertura}</td>
                     <td>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#confirmModal${caja.id}">Asignar
+                                data-target="#confirmModal${caja.id}">Asignarme
                         </button>
 
                         <!-- Modal de Confirmación -->

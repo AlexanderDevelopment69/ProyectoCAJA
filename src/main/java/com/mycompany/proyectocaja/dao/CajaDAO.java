@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CajaDAO {
 
-    // Metodo para registrar una nueva caja
+    // metodo para registrar una nueva caja
     public void registrarCaja(Caja caja) {
         String sql = "INSERT INTO cajas (identificador, estado, saldo_inicial, saldo_final, fecha_apertura) VALUES (?, ?, ?, ?, ?)";
 
@@ -30,7 +30,7 @@ public class CajaDAO {
         }
     }
 
-    // Metodo para obtener una caja por su ID
+    // metodo para obtener una caja por su ID
     public Caja obtenerCajaPorId(int id) {
         Caja caja = null;
         String sql = "SELECT * FROM cajas WHERE id = ?";
@@ -57,7 +57,7 @@ public class CajaDAO {
         return caja;
     }
 
-    // Metodo para obtener todas las cajas
+    // metodo para obtener todas las cajas
     public List<Caja> obtenerTodasLasCajas() {
         List<Caja> cajas = new ArrayList<>();
         String sql = "SELECT * FROM cajas";
@@ -85,7 +85,7 @@ public class CajaDAO {
     }
 
 
-    // Metodo para obtener todas las cajas por estado
+    // metodo para obtener todas las cajas por estado
     public List<Caja> obtenerCajasPorEstado(String estado) {
         List<Caja> cajas = new ArrayList<>();
         String sql = "SELECT * FROM cajas WHERE estado = ?";
@@ -114,7 +114,7 @@ public class CajaDAO {
     }
 
 
-    // Metodo para actualizar la información de una caja
+    // metodo para actualizar la informacion de una caja
     public void actualizarCaja(Caja caja) {
         String sql = "UPDATE cajas SET estado = ?, fecha_apertura = ?, saldo_final = ? WHERE id = ?";
 
@@ -130,4 +130,17 @@ public class CajaDAO {
             e.printStackTrace();
         }
     }
+
+    public void asignarCajero(Caja caja) {
+        String sql = "UPDATE cajas SET estado = 'ocupada', cajero_id = ? WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, caja.getCajeroId());
+            pstmt.setInt(2, caja.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

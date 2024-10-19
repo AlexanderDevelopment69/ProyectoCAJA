@@ -12,7 +12,7 @@ import java.util.List;
 
 public class RolDAO {
 
-    // Metodo para obtener todos los roles de la base de datos
+    // metodo para obtener todos los roles de la base de datos
     public List<Rol> obtenerTodosLosRoles() {
         List<Rol> roles = new ArrayList<>();
         String sql = "SELECT * FROM roles";
@@ -34,7 +34,7 @@ public class RolDAO {
         return roles;
     }
 
-    // Metodo para obtener un rol por su ID
+    // metodo para obtener un rol por su ID
     public Rol obtenerRolPorId(int id) {
         Rol rol = null;
         String sql = "SELECT * FROM roles WHERE id = ?";
