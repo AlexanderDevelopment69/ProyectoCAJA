@@ -2,11 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 <%
+    // verifica si el usuario ha iniciado sesion
     if (session.getAttribute("usuario") == null) {
-        response.sendRedirect("iniciarSesion.jsp");
-        return;
+        response.sendRedirect("iniciarSesion.jsp"); // redirige a la pagina de inicio de sesion
+        return; // no continua ejecutandose
     }
 %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,7 +42,7 @@
         <c:if test="${not empty param.deleted}">
             <div class="alert alert-danger">Usuario eliminado correctamente.</div>
         </c:if>
-
+        <h4>Usuarios Registrados</h4>
         <table class="table table-bordered">
             <thead>
             <tr>

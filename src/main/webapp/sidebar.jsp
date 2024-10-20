@@ -2,13 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 <%
-    // Verifica si el usuario ha iniciado sesión
+    // verifica si el usuario ha iniciado sesión
     if (session.getAttribute("usuario") == null) {
-        response.sendRedirect("iniciarSesion.jsp"); // Redirige a la página de inicio de sesión
-        return; // Asegúrate de que el código no continúe ejecutándose
+        response.sendRedirect("iniciarSesion.jsp"); // redirige a la página de inicio de sesion
+        return; // no continua ejecutandose
     }
 %>
-<div class="sidebar close">
+<div class="sidebar">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
         <span class="logo_name">Sistema Caja</span>
@@ -54,8 +54,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 
